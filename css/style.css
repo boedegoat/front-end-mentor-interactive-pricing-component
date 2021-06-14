@@ -57,4 +57,40 @@ body {
   color: var(--text);
   font-weight: 600;
 }
+
+.price-component {
+  background: var(--price-component-bg);
+  max-width: 540px;
+  margin: auto;
+  padding: 2.8rem;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px;
+}
+
+.price-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.price-header .view {
+  text-transform: uppercase;
+  color: var(--text);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.price-header .dollar {
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.price-header .month {
+  color: var(--text);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
 /*# sourceMappingURL=style.css.map */

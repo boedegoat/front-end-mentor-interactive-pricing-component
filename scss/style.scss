@@ -50,3 +50,31 @@ body {
     font-weight: 600;
   }
 }
+
+.price-component {
+  background: var(--price-component-bg);
+  max-width: 540px;
+  margin: auto;
+  padding: 2.8rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px;
+}
+
+.price-header {
+  display: flex;
+  .view {
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+  .dollar {
+    margin-left: auto;
+    margin-right: 12px;
+  }
+  .month {
+    color: var(--text);
+    align-self: center;
+  }
+}
