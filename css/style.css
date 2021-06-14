@@ -20,4 +20,41 @@
   --text: hsl(225, 20%, 60%);
   --sub-header: 15px;
 }
+
+body {
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  background-image: url(../images/bg-pattern.svg);
+  background-repeat: no-repeat;
+}
+
+.page-header {
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(../images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page-header .main-header {
+  color: var(--text-cta-bg);
+  line-height: 2em;
+}
+
+.page-header .sub-header {
+  color: var(--text);
+  font-weight: 600;
+}
 /*# sourceMappingURL=style.css.map */
