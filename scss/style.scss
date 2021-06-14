@@ -31,6 +31,7 @@ body {
   background-color: var(--main-bg);
   background-image: url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .page-header {
@@ -47,6 +48,7 @@ body {
     color: var(--text-cta-bg);
     line-height: 2em;
   }
+
   .sub-header {
     color: var(--text);
     font-weight: 600;
@@ -65,6 +67,7 @@ body {
   display: flex;
   padding: var(--price-pading) var(--price-pading) 0;
   margin-bottom: 1rem;
+
   .view {
     text-transform: uppercase;
     color: var(--text);
@@ -73,13 +76,69 @@ body {
     font-size: 15px;
     margin-top: 10px;
   }
+
   .dollar {
     margin-left: auto;
     margin-right: 12px;
   }
+
   .month {
     color: var(--text);
     align-self: center;
+  }
+}
+
+.price-slider {
+  padding: 2rem var(--price-pading) 4rem;
+
+  .custom-slider {
+    --progress-width: 0%;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: var(--slider-empty);
+    border-radius: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: var(--progress-width);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--slider-bar);
+    }
+
+    input[type='range'] {
+      appearance: none;
+      position: absolute;
+      z-index: 2;
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      background: transparent;
+
+      &::-webkit-slider-thumb {
+        cursor: pointer;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--slider-bg);
+        background-image: url(../images/icon-slider.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 0 5px 30px -5px var(--slider-bg);
+      }
+
+      &:active::-webkit-slider-thumb {
+        background-color: hsl(174, 86%, 42%);
+        cursor: grabbing;
+      }
+    }
   }
 }
 
@@ -88,15 +147,18 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 0 var(--price-pading) var(--price-pading);
+
   .label {
     font-size: 15px;
     color: var(--text);
   }
+
   .switch {
     position: relative;
     width: 40px;
     height: 20px;
     margin: 0 0.7rem;
+
     input[type='checkbox'] {
       opacity: 0;
       width: 0;
@@ -105,12 +167,14 @@ body {
         left: calc(100% - 15px - 4px);
       }
     }
+
     .slider {
       position: absolute;
       inset: 0;
       background: var(--cta-text);
       border-radius: 20px;
       cursor: pointer;
+
       &::before {
         content: '';
         position: absolute;
@@ -123,11 +187,13 @@ body {
         transition: left 0.3s;
         background: #fff;
       }
+
       &:hover {
         background: var(--slider-bg);
       }
     }
   }
+
   .discount {
     color: var(--discount-text);
     background: var(--discount-bg);
@@ -150,16 +216,20 @@ body {
   color: var(--text);
   padding: calc(var(--price-pading) - 0.9rem) var(--price-pading);
   font-size: 15px;
+
   .benefits-list {
     list-style: none;
+
     .benefit {
       padding: 3px 0;
+
       &::before {
         content: url(../images/icon-check.svg);
         margin-right: 13px;
       }
     }
   }
+
   .start-trial-btn {
     border: none;
     outline: none;

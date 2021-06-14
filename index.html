@@ -13,6 +13,8 @@
     />
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- js -->
+    <script src="js/main.js" defer></script>
     <title>Frontend Mentor | Interactive pricing component</title>
   </head>
   <body>
@@ -26,7 +28,11 @@
         <h1 class="dollar">$16.00</h1>
         <p class="month">/month</p>
       </header>
-      <div class="price-slider"></div>
+      <div class="price-slider">
+        <div class="custom-slider">
+          <input type="range" min="0" max="32" value="16" />
+        </div>
+      </div>
       <div class="price-billing">
         <p class="label">Monthly Billing</p>
         <label class="switch">
