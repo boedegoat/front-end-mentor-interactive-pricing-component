@@ -104,12 +104,59 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  font-size: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 var(--price-pading) var(--price-pading);
 }
 
 .price-billing .label {
+  font-size: 15px;
   color: var(--text);
+}
+
+.price-billing .switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  margin: 0 0.7rem;
+}
+
+.price-billing .switch input[type='checkbox'] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.price-billing .switch input[type='checkbox']:checked + .slider::before {
+  left: calc(100% - 15px - 4px);
+}
+
+.price-billing .switch .slider {
+  position: absolute;
+  inset: 0;
+  background: var(--cta-text);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.price-billing .switch .slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
+  background: #fff;
+}
+
+.price-billing .switch .slider:hover {
+  background: var(--slider-bg);
 }
 
 .price-billing .discount {
@@ -119,6 +166,7 @@ body {
   font-size: 13px;
   font-weight: bold;
   border-radius: 20px;
+  margin-left: 0.5rem;
 }
 
 .price-divider {

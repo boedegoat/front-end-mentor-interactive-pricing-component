@@ -86,10 +86,47 @@ body {
 .price-billing {
   display: flex;
   justify-content: flex-end;
-  font-size: 15px;
+  align-items: center;
   padding: 0 var(--price-pading) var(--price-pading);
   .label {
+    font-size: 15px;
     color: var(--text);
+  }
+  .switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin: 0 0.7rem;
+    input[type='checkbox'] {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:checked + .slider::before {
+        left: calc(100% - 15px - 4px);
+      }
+    }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: var(--cta-text);
+      border-radius: 20px;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        border-radius: 20px;
+        transition: left 0.3s;
+        background: #fff;
+      }
+      &:hover {
+        background: var(--slider-bg);
+      }
+    }
   }
   .discount {
     color: var(--discount-text);
@@ -98,6 +135,7 @@ body {
     font-size: 13px;
     font-weight: bold;
     border-radius: 20px;
+    margin-left: 0.5rem;
   }
 }
 
