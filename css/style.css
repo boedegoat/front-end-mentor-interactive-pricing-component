@@ -19,6 +19,7 @@
   --toggler-bg: hsl(223, 50%, 87%);
   --text: hsl(225, 20%, 60%);
   --sub-header: 15px;
+  --price-pading: 2.8em;
 }
 
 body {
@@ -62,7 +63,6 @@ body {
   background: var(--price-component-bg);
   max-width: 540px;
   margin: auto;
-  padding: 2.8rem;
   -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 6px;
@@ -72,6 +72,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: var(--price-pading) var(--price-pading) 0;
+  margin-bottom: 1rem;
 }
 
 .price-header .view {
@@ -80,6 +82,7 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 15px;
+  margin-top: 10px;
 }
 
 .price-header .dollar {
@@ -92,5 +95,72 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.price-billing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 15px;
+  padding: 0 var(--price-pading) var(--price-pading);
+}
+
+.price-billing .label {
+  color: var(--text);
+}
+
+.price-billing .discount {
+  color: var(--discount-text);
+  background: var(--discount-bg);
+  padding: 3px 7px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.price-divider {
+  border-top: 1px solid var(--main-bg);
+}
+
+.price-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--text);
+  padding: calc(var(--price-pading) - 0.9rem) var(--price-pading);
+  font-size: 15px;
+}
+
+.price-bottom .benefits-list {
+  list-style: none;
+}
+
+.price-bottom .benefits-list .benefit {
+  padding: 3px 0;
+}
+
+.price-bottom .benefits-list .benefit::before {
+  content: url(../images/icon-check.svg);
+  margin-right: 13px;
+}
+
+.price-bottom .start-trial-btn {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background: var(--text-cta-bg);
+  color: var(--cta-text);
+  padding: 15px 50px;
+  cursor: pointer;
+  border-radius: 25px;
 }
 /*# sourceMappingURL=style.css.map */
