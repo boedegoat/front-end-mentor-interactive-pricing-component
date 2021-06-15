@@ -8,6 +8,7 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
   - [The challenge](#the-challenge)
   - [Links](#links)
 - [My process](#my-process)
+  - [Screenshot](#screenshot)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
@@ -29,6 +30,10 @@ Users should be able to:
 - [live site URL](https://boedegoat-interactive-pricing-component.vercel.app/)
 
 ## My process
+
+### Screenshot
+
+![screenshot](screenshot.jpg)
 
 ### Built with
 
