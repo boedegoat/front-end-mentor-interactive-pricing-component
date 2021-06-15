@@ -24,6 +24,10 @@
 
   --sub-header: 15px;
   --price-pading: 2.8em;
+
+  @media (max-width: 580px) {
+    --price-pading: 1.5rem;
+  }
 }
 
 body {
@@ -44,14 +48,27 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 
+  @media (max-width: 580px) {
+    text-align: center;
+  }
+
   .main-header {
     color: var(--text-cta-bg);
     line-height: 2em;
+
+    @media (max-width: 580px) {
+      font-size: 1.3rem;
+    }
   }
 
   .sub-header {
     color: var(--text);
     font-weight: 600;
+
+    @media (max-width: 580px) {
+      font-size: 1rem;
+      width: 60%;
+    }
   }
 }
 
@@ -61,82 +78,111 @@ body {
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 6px;
+
+  @media (max-width: 580px) {
+    margin: 1.25rem;
+  }
 }
 
 .price-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  grid-template-areas:
+    'view dollar time'
+    'slider slider slider';
   padding: var(--price-pading) var(--price-pading) 0;
   margin-bottom: 1rem;
 
+  @media (max-width: 580px) {
+    grid-template-columns: 1.25fr 1fr;
+    margin-bottom: 0mm;
+    grid-template-areas:
+      'view view'
+      'slider slider'
+      'dollar time';
+  }
+
   .view {
+    grid-area: view;
     text-transform: uppercase;
     color: var(--text);
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 15px;
     margin-top: 10px;
+
+    @media (max-width: 580px) {
+      text-align: center;
+    }
   }
 
   .dollar {
-    margin-left: auto;
+    grid-area: dollar;
+    justify-self: flex-end;
     margin-right: 12px;
   }
 
-  .month {
+  .time {
+    grid-area: time;
     color: var(--text);
     align-self: center;
   }
-}
 
-.price-slider {
-  padding: 2rem var(--price-pading) 4rem;
+  .slider {
+    grid-area: slider;
+    padding: 2rem 0 2.3rem;
 
-  .custom-slider {
-    --progress-width: 0%;
-    position: relative;
-    width: 100%;
-    height: 10px;
-    background: var(--slider-empty);
-    border-radius: 5px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      z-index: 1;
-      width: var(--progress-width);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--slider-bar);
+    @media (max-width: 580px) {
+      padding-top: 2.3rem;
     }
 
-    input[type='range'] {
-      appearance: none;
-      position: absolute;
-      z-index: 2;
-      display: block;
-      margin: 0;
+    .custom-slider {
+      --progress-width: 0%;
+      position: relative;
       width: 100%;
-      height: 100%;
-      outline: none;
-      background: transparent;
+      height: 10px;
+      background: var(--slider-empty);
+      border-radius: 5px;
 
-      &::-webkit-slider-thumb {
-        cursor: pointer;
-        appearance: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--slider-bg);
-        background-image: url(../images/icon-slider.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        box-shadow: 0 5px 30px -5px var(--slider-bg);
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        width: var(--progress-width);
+        height: 100%;
+        border-radius: inherit;
+        background: var(--slider-bar);
       }
 
-      &:active::-webkit-slider-thumb {
-        background-color: hsl(174, 86%, 42%);
-        cursor: grabbing;
+      input[type='range'] {
+        appearance: none;
+        position: absolute;
+        z-index: 2;
+        display: block;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        background: transparent;
+
+        &::-webkit-slider-thumb {
+          cursor: pointer;
+          appearance: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--slider-bg);
+          background-image: url(../images/icon-slider.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          box-shadow: 0 5px 30px -5px var(--slider-bg);
+        }
+
+        &:active::-webkit-slider-thumb {
+          background-color: hsl(174, 86%, 42%);
+          cursor: grabbing;
+        }
       }
     }
   }
@@ -148,9 +194,18 @@ body {
   align-items: center;
   padding: 0 var(--price-pading) var(--price-pading);
 
+  @media (max-width: 580px) {
+    padding: 2rem var(--price-pading);
+    justify-content: center;
+  }
+
   .label {
     font-size: 15px;
     color: var(--text);
+
+    @media (max-width: 580px) {
+      font-size: clamp(12px, 2.5vw, 15px);
+    }
   }
 
   .switch {
@@ -159,16 +214,20 @@ body {
     height: 20px;
     margin: 0 0.7rem;
 
+    @media (max-width: 580px) {
+      margin: 0 0.5rem;
+    }
+
     input[type='checkbox'] {
       opacity: 0;
       width: 0;
       height: 0;
-      &:checked + .slider::before {
+      &:checked + .switcher::before {
         left: calc(100% - 15px - 4px);
       }
     }
 
-    .slider {
+    .switcher {
       position: absolute;
       inset: 0;
       background: var(--cta-text);
@@ -202,6 +261,22 @@ body {
     font-weight: bold;
     border-radius: 20px;
     margin-left: 0.5rem;
+
+    &::after {
+      content: ' discount';
+    }
+
+    @media (max-width: 580px) {
+      font-size: 12px;
+
+      &::before {
+        content: '-';
+      }
+
+      &::after {
+        content: '';
+      }
+    }
   }
 }
 
@@ -218,8 +293,18 @@ body {
   padding: calc(var(--price-pading) - 0.9rem) var(--price-pading);
   font-size: 15px;
 
+  @media (max-width: 580px) {
+    flex-direction: column;
+    text-align: center;
+    padding: calc(var(--price-pading) - 0.3rem) var(--price-pading);
+  }
+
   .benefits-list {
     list-style: none;
+
+    @media (max-width: 580px) {
+      margin-bottom: 1rem;
+    }
 
     .benefit {
       padding: 3px 0;
