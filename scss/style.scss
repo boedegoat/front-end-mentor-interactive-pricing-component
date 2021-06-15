@@ -36,6 +36,12 @@ body {
   background-image: url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: top right;
+
+  @media (max-width: 580px) {
+    background-size: 200%;
+    background-position: top right -10vw;
+  }
 }
 
 .page-header {
