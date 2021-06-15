@@ -410,11 +410,13 @@ body {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  font-size: clamp(12px, 2vw, 15px);
 }
 
 .attribution a {
   text-decoration: none;
   font-weight: bold;
   color: var(--discount-text);
+  font-size: inherit;
 }
 /*# sourceMappingURL=style.css.map */

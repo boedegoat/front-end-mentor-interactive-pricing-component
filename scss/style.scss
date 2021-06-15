@@ -340,10 +340,12 @@ body {
   margin: 1rem auto 0;
   padding: 0.5rem;
   width: max-content;
+  font-size: clamp(12px, 2vw, 15px);
 
   a {
     text-decoration: none;
     font-weight: bold;
     color: var(--discount-text);
+    font-size: inherit;
   }
 }
