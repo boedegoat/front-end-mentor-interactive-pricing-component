@@ -333,3 +333,17 @@ body {
     border-radius: 25px;
   }
 }
+
+.attribution {
+  background: var(--discount-bg);
+  text-align: center;
+  margin: 1rem auto 0;
+  padding: 0.5rem;
+  width: max-content;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--discount-text);
+  }
+}

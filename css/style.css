@@ -401,4 +401,20 @@ body {
   cursor: pointer;
   border-radius: 25px;
 }
+
+.attribution {
+  background: var(--discount-bg);
+  text-align: center;
+  margin: 1rem auto 0;
+  padding: 0.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.attribution a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--discount-text);
+}
 /*# sourceMappingURL=style.css.map */
